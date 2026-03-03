@@ -1,0 +1,16 @@
+{
+  "name": "BitDCA — Auto-Stack on Bitcoin L1",
+  "short_name": "BitDCA",
+  "description": "Fully on-chain Dollar-Cost Averaging protocol on Bitcoin L1 via OPNet",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

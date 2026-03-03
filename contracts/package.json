@@ -1,0 +1,26 @@
+{
+    "name": "@bitdca/contracts",
+    "version": "1.0.0",
+    "description": "BitDCA — Dollar Cost Averaging Smart Contract for OPNet",
+    "private": true,
+    "scripts": {
+        "build": "asc src/index-dca.ts --config asconfig.json --target dca",
+        "clean": "rm -rf build/*",
+        "deploy:testnet": "tsx scripts/deploy-testnet.ts"
+    },
+    "dependencies": {
+        "@btc-vision/as-bignum": "0.1.2",
+        "@btc-vision/btc-runtime": "rc"
+    },
+    "devDependencies": {
+        "@assemblyscript/loader": "latest",
+        "@btc-vision/assemblyscript": "^0.29.2",
+        "@btc-vision/bip32": "^7.1.2",
+        "@btc-vision/bitcoin": "^7.0.0-rc.6",
+        "@btc-vision/opnet-transform": "1.1.0",
+        "@btc-vision/transaction": "^1.8.0-rc.10",
+        "bech32": "^2.0.0",
+        "opnet": "^1.8.1-rc.17",
+        "tsx": "^4.21.0"
+    }
+}

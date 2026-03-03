@@ -1,0 +1,12 @@
+{
+  "network": "regtest",
+  "rpc": "https://regtest.opnet.org",
+  "contracts": {
+    "dcaVault": "opr1sqzltnkpahunxj8skcgsx3r5a489te0x7nc0lyyzu"
+  },
+  "config": {
+    "router": "0x80f8375d061d638a0b45a4eb4decbfd39e9abba913f464787194ce3c02d2ea5a",
+    "keeper": "bcrt1pqgsxumy0wvcs0cr9f3ffh30mhdnw4l9jcg65ezygsygk6z5f6ansp3ecg5"
+  },
+  "deployedAt": "2026-03-02T18:01:12.913Z"
+}

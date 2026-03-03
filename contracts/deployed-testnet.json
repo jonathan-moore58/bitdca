@@ -1,0 +1,15 @@
+{
+  "network": "testnet",
+  "rpc": "https://testnet.opnet.org",
+  "contracts": {
+    "dcaVault": "opt1sqzx42tkrx9s3mzx7pg7ezevn66lt76v4pswy35ep"
+  },
+  "config": {
+    "router": "0xa02aa5ca4c307107484d5fb690d811df1cf526f8de204d24528653dcae369a0f",
+    "keeper": "opt1pqgsxumy0wvcs0cr9f3ffh30mhdnw4l9jcg65ezygsygk6z5f6ansa2y6ed",
+    "keeperBtc": "opt1pqgsxumy0wvcs0cr9f3ffh30mhdnw4l9jcg65ezygsygk6z5f6ansa2y6ed",
+    "nativeSwap": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "feeRecipient": "opt1pqgsxumy0wvcs0cr9f3ffh30mhdnw4l9jcg65ezygsygk6z5f6ansa2y6ed"
+  },
+  "deployedAt": "2026-03-03T12:35:31.882Z"
+}

@@ -1,0 +1,21 @@
+{
+    "targets": {
+        "dca": {
+            "outFile": "build/DCAVault.wasm",
+            "textFile": "build/DCAVault.wat",
+            "abort": "index-dca/abort"
+        }
+    },
+    "options": {
+        "transform": "@btc-vision/opnet-transform",
+        "sourceMap": false,
+        "optimizeLevel": 3,
+        "shrinkLevel": 2,
+        "converge": true,
+        "noAssert": true,
+        "runtime": "stub",
+        "memoryBase": 0,
+        "initialMemory": 1,
+        "exportStart": "start"
+    }
+}

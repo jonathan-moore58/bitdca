@@ -1,0 +1,625 @@
+{
+    "functions": [
+        {
+            "name": "createPosition",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "tokenIn",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "tokenOut",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "amountPerExec",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "intervalBlocks",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "depositAmount",
+                    "type": "UINT256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "executeDCA",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "minAmountOut",
+                    "type": "UINT256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "amountOut",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "createBTCPosition",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "owner",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "tokenOut",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "satsPerExec",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "intervalBlocks",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "totalSatsDeposit",
+                    "type": "UINT256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "createBTCPositionPublic",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "tokenOut",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "satsPerExec",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "intervalBlocks",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "totalSatsDeposit",
+                    "type": "UINT256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "executeBTCDCA",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "amountOut",
+                    "type": "UINT256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "recorded",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "topUp",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "amount",
+                    "type": "UINT256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "newDeposit",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "cancelPosition",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "refunded",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "getPosition",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "owner",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "tokenIn",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "tokenOut",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "amountPerExec",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "intervalBlocks",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "lastExecBlock",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "totalExecs",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "totalSpent",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "totalReceived",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "depositRemaining",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "active",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "createdBlock",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "posType",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "getStats",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "nextPositionId",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "totalPositions",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "activePositions",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "totalExecutions",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "totalVolume",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "setKeeper",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "newKeeper",
+                    "type": "ADDRESS"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "BOOL"
+                }
+            ]
+        },
+        {
+            "name": "setRouter",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "newRouter",
+                    "type": "ADDRESS"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "BOOL"
+                }
+            ]
+        },
+        {
+            "name": "setNativeSwap",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "newNativeSwap",
+                    "type": "ADDRESS"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "BOOL"
+                }
+            ]
+        },
+        {
+            "name": "getNativeSwap",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "nativeSwap",
+                    "type": "ADDRESS"
+                }
+            ]
+        },
+        {
+            "name": "setFeeRecipient",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "newFeeRecipient",
+                    "type": "ADDRESS"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "BOOL"
+                }
+            ]
+        },
+        {
+            "name": "getFeeRecipient",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "feeRecipient",
+                    "type": "ADDRESS"
+                }
+            ]
+        },
+        {
+            "name": "togglePause",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "paused",
+                    "type": "BOOL"
+                }
+            ]
+        },
+        {
+            "name": "isPaused",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "paused",
+                    "type": "BOOL"
+                }
+            ]
+        },
+        {
+            "name": "getKeeper",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "keeper",
+                    "type": "ADDRESS"
+                }
+            ]
+        },
+        {
+            "name": "getRouter",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "router",
+                    "type": "ADDRESS"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "name": "PositionCreated",
+            "values": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "owner",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "tokenIn",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "tokenOut",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "amountPerExec",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "intervalBlocks",
+                    "type": "UINT256"
+                }
+            ],
+            "type": "Event"
+        },
+        {
+            "name": "DCAExecuted",
+            "values": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "amountIn",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "amountOut",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "executionBlock",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "executionNumber",
+                    "type": "UINT256"
+                }
+            ],
+            "type": "Event"
+        },
+        {
+            "name": "BTCPositionCreated",
+            "values": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "owner",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "tokenOut",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "satsPerExec",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "intervalBlocks",
+                    "type": "UINT256"
+                }
+            ],
+            "type": "Event"
+        },
+        {
+            "name": "BTCDCAExecuted",
+            "values": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "satsSpent",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "tokensReceived",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "executionBlock",
+                    "type": "UINT256"
+                }
+            ],
+            "type": "Event"
+        },
+        {
+            "name": "PositionToppedUp",
+            "values": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "amount",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "newDeposit",
+                    "type": "UINT256"
+                }
+            ],
+            "type": "Event"
+        },
+        {
+            "name": "PositionCancelled",
+            "values": [
+                {
+                    "name": "positionId",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "owner",
+                    "type": "ADDRESS"
+                }
+            ],
+            "type": "Event"
+        },
+        {
+            "name": "KeeperUpdated",
+            "values": [
+                {
+                    "name": "oldKeeper",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "newKeeper",
+                    "type": "ADDRESS"
+                }
+            ],
+            "type": "Event"
+        },
+        {
+            "name": "RouterUpdated",
+            "values": [
+                {
+                    "name": "oldRouter",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "newRouter",
+                    "type": "ADDRESS"
+                }
+            ],
+            "type": "Event"
+        },
+        {
+            "name": "NativeSwapUpdated",
+            "values": [
+                {
+                    "name": "oldNativeSwap",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "newNativeSwap",
+                    "type": "ADDRESS"
+                }
+            ],
+            "type": "Event"
+        },
+        {
+            "name": "FeeRecipientUpdated",
+            "values": [
+                {
+                    "name": "oldRecipient",
+                    "type": "ADDRESS"
+                },
+                {
+                    "name": "newRecipient",
+                    "type": "ADDRESS"
+                }
+            ],
+            "type": "Event"
+        }
+    ]
+}

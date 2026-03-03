@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- Bitcoin B -->
+  <path d="M38.5 24.5c1.5 1 2.5 2.5 2.5 4.5 0 2.5-1.5 4.3-3.5 5 2.5.8 4 3 4 5.5 0 4-3.2 6.5-7.5 6.5H24V18h9.5c4 0 6.5 2.2 6.5 5.5 0 .3 0 .7-.5 1zM29 22v7h4.5c2.5 0 4-1.2 4-3.5S36 22 33.5 22H29zm0 11v8h5.5c2.8 0 4.5-1.5 4.5-4s-1.7-4-4.5-4H29z" fill="white"/>
+  <!-- DCA arrows -->
+  <path d="M16 14l4-4v3h8v2h-8v3l-4-4z" fill="white" opacity="0.7"/>
+  <path d="M48 50l-4 4v-3h-8v-2h8v-3l4 4z" fill="white" opacity="0.7"/>
+</svg>
