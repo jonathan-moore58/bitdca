@@ -83,7 +83,7 @@ DCA_VAULT_ADDRESS=0x... KEEPER_MNEMONIC="your words here" npm start
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `RPC_URL` | `https://testnet.opnet.org` | OPNet RPC endpoint |
-| `NETWORK` | `regtest` | Network: regtest, testnet, mainnet |
+| `NETWORK` | `testnet` | Network: regtest, testnet, mainnet |
 | `DCA_VAULT_ADDRESS` | — | Deployed DCAVault hex address |
 | `ROUTER_ADDRESS` | MotoSwap regtest | MotoSwap router hex address |
 | `KEEPER_MNEMONIC` | dev mnemonic | BIP39 mnemonic for keeper wallet |
