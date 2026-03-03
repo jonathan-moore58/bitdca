@@ -40,9 +40,12 @@ const contractCache = new Map<string, ReturnType<typeof getContract<any>>>();
  * Write-mode contracts are NOT cached because the provider may change between sessions.
  */
 export function getDCAVault(sender?: unknown, provider?: AbstractRpcProvider) {
-    // Use hex address (0x...) for getContract — the SDK rejects bech32m (opt1...) in some versions
-    const addr = DCA_VAULT_ADDRESS_HEX || DCA_VAULT_ADDRESS;
-    if (!addr) throw new Error('DCA_VAULT_ADDRESS not set');
+    const addrStr = DCA_VAULT_ADDRESS_HEX || DCA_VAULT_ADDRESS;
+    if (!addrStr) throw new Error('DCA_VAULT_ADDRESS not set');
+
+    // Pass Address object (not string) to bypass browser SDK's AddressVerificator check
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const addr: any = Address.fromString(addrStr);
 
     // Write-mode: create a fresh contract with the wallet provider
     if (provider) {
@@ -55,7 +58,7 @@ export function getDCAVault(sender?: unknown, provider?: AbstractRpcProvider) {
     }
 
     // Read-only mode: cached with JSONRpcProvider
-    const key = `dca-${addr}`;
+    const key = `dca-${addrStr}`;
     if (!contractCache.has(key)) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const c = getContract<any>(addr, DCA_VAULT_ABI, getProvider(), network);
@@ -76,10 +79,14 @@ export function getDCAVault(sender?: unknown, provider?: AbstractRpcProvider) {
  * provider — pass the WalletConnect provider for write operations.
  */
 export function getOP20(tokenAddress: string, sender?: unknown, provider?: AbstractRpcProvider) {
+    // Pass Address object (not string) to bypass browser SDK's AddressVerificator check
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const addr: any = Address.fromString(tokenAddress);
+
     // Write-mode: fresh contract with wallet provider
     if (provider) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const c = getContract<any>(tokenAddress, OP20_ABI, provider, network);
+        const c = getContract<any>(addr, OP20_ABI, provider, network);
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         if (sender) c.setSender(sender as any);
         return c;
@@ -89,7 +96,7 @@ export function getOP20(tokenAddress: string, sender?: unknown, provider?: Abstr
     const key = `op20-${tokenAddress}`;
     if (!contractCache.has(key)) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const c = getContract<any>(tokenAddress, OP20_ABI, getProvider(), network);
+        const c = getContract<any>(addr, OP20_ABI, getProvider(), network);
         contractCache.set(key, c);
     }
     const contract = contractCache.get(key);
