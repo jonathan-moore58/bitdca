@@ -3,6 +3,7 @@ import { networks } from '@btc-vision/bitcoin';
 import { Address } from '@btc-vision/transaction';
 import {
     DCA_VAULT_ADDRESS,
+    DCA_VAULT_ADDRESS_HEX,
     DCA_VAULT_ABI,
     OP20_ABI,
     RPC_URL,
@@ -39,7 +40,8 @@ const contractCache = new Map<string, ReturnType<typeof getContract<any>>>();
  * Write-mode contracts are NOT cached because the provider may change between sessions.
  */
 export function getDCAVault(sender?: unknown, provider?: AbstractRpcProvider) {
-    const addr = DCA_VAULT_ADDRESS;
+    // Use hex address (0x...) for getContract — the SDK rejects bech32m (opt1...) in some versions
+    const addr = DCA_VAULT_ADDRESS_HEX || DCA_VAULT_ADDRESS;
     if (!addr) throw new Error('DCA_VAULT_ADDRESS not set');
 
     // Write-mode: create a fresh contract with the wallet provider
